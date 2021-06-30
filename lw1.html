@@ -1,0 +1,347 @@
+<style>
+
+body
+{
+/*background: url(back7.png);*/
+background-color: #FBFBFD;
+align-items: center;
+filter:blur(0px);
+}
+h2
+{
+color: black;
+font-family: 'Brush Script MT', cursive;
+background-color: transparent;
+}
+form
+{
+width: 400px;
+position: absolute;
+height:50px;
+
+
+}
+
+h4
+{
+font-family: 'Brush Script MT', cursive;
+margin-left: 30px;
+}
+
+input
+{
+width:40%;
+height:100%;
+padding-top: 20px;
+border: none;
+border-bottom:2px solid #5fa8d3;
+background-color: transparent;
+font-family: 'Brush Script MT', cursive;
+font-size: 15px;
+margin-left: 5px;
+
+
+}
+
+
+input:focus
+{
+outline: none;
+
+}
+button
+{
+position:absolute;
+background-color: transparent;
+color: black;
+border: 2px solid #5fa8d3;
+text-align: center;
+padding: 14px 40px;
+font-size: 15px;
+font-family: 'Brush Script MT', cursive;
+color: red;
+bottom: 240px;
+margin-left: 5px;
+}
+
+
+
+button:hover
+{
+background-color: #5fa8d3;
+color: white;
+
+}
+
+div#d1
+{
+position: absolute;
+top:400px;
+font-family: 'Brush Script MT', cursive;
+font-size: 20px;
+
+}
+
+div#d2
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+border: 2px solid #5fa8d3;
+}
+
+div#d3
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+left: 220px;
+bottom: 220px;
+border: 2px solid #5fa8d3;
+}
+div#d4
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+left: 440px;
+bottom: 220px;
+border: 2px solid #5fa8d3;
+}
+div#d5
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+left: 660px;
+bottom: 220px;
+border: 2px solid #5fa8d3;
+}
+div#d6
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+left: 880px;
+bottom: 220px;
+border: 2px solid #5fa8d3;
+}
+div#d7
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 300px;
+left: 1100px;
+bottom: 220PX;
+border: 2px solid #5fa8d3;
+}
+div#d8
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 200px;
+left: 880px;
+bottom: 10px;
+border: 2px solid #5fa8d3;
+}
+div#d9
+{
+position: absolute;
+background-color: rgba(5,4,2,0.0);
+width:200px;
+height: 200px;
+left: 1100px;
+bottom: 10px;
+border: 2px solid #5fa8d3;
+}
+img#im1
+{
+position: absolute;
+left: 1100px;
+top:300px
+
+}
+</style>
+<script>
+function cmd1()
+{
+var img = document.getElementById("in1").value
+var cont = document.getElementById("in2").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/lw.py?x=" + img+ "&y=" +cont, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output1 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output1;
+   }
+}
+
+function cmd2()
+{
+var img1 = document.getElementById("in3").value
+var cont1 = document.getElementById("in4").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd2.py?w=" + img1+ "&z=" +cont1, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output2 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output2;
+   }
+}
+function cmd3()
+{
+var name = document.getElementById("in5").value
+var number = document.getElementById("in6").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd3.py?x=" + name+ "&y=" +number, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output3 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output3;
+   }
+}
+
+function cmd4()
+{
+var name = document.getElementById("in7").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd4.py?x=" +name, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output4 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output4;
+   }
+}
+
+function cmd5()
+{
+var name = document.getElementById("in8").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd5.py?x=" +name, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output5 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output5;
+   }
+}
+
+function cmd6()
+{
+var name = document.getElementById("in9").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd6.py?x=" +name, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output6 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output6;
+   }
+}
+
+function cmd7()
+{
+var xhr = new XMLHttpRequest();
+var i="sudo kubectl get deployment"
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd7.py?x=" +i, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output7 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output7;
+   }
+}
+function cmd8()
+{
+var xhr = new XMLHttpRequest();
+var i="sudo kubectl get pods"
+xhr.open("GET", "http://192.168.56.108/cgi-bin/cmd8.py?x=" +i, true);
+
+xhr.send();
+xhr.onload = function() {
+   var output8 = xhr.responseText;
+   document.getElementById("d1").innerHTML = output8;
+   }
+}
+
+</script>
+<body>
+<div><img  src='kubernetes.png' width='40px' height='40px' style="position:absolute;left:480px;"></div>
+<h2 style="position:absolute;top:0px;left:530px;margin-top:0px;">Kubernetes Web App</h2>
+<pre>
+<div style='bottom:220px 'id='d2'>
+<form>
+<h4>LAUNCH POD</h4>
+<input type='text' id='in1' name='fname' placeholder='Enter Image Name'>
+<input type='text' id='in2' name='pod' placeholder='Enter Pod Name'>
+</form>
+</div>
+<div id='d3'>
+<form>
+<h4 style='margin-left:5px;'>LAUNCH DEPLOYMENT</h4>
+<input type='text' id='in3' name='fname' placeholder='Enter Image Name'>
+<input type='text' id='in4' name='pod' placeholder='Enter deploy Name'>
+</form>
+</div>
+<div id='d4'>
+<form>
+<h4 style='margin-left:10px;'>SCALE DEPLOYMENT</h4>
+<input type='text' id='in5' name='fname' placeholder='Enter Deploy Name'>
+<input type='text' id='in6' name='pod' placeholder='Enter Replica Number'>
+</form>
+</div>
+<div id='d5'>
+<form>
+<h4 style='margin-left:5px;'>EXPOSE DEPLOYMENT</h4>
+<input type='text' id='in7' name='fname' placeholder='Enter Deploy Name'>
+</form>
+</div>
+<div id='d6'>
+<form>
+<h4>DELETE POD</h4>
+<input type='text' id='in8' name='fname' placeholder='Enter Pod Name'>
+</form>
+</div>
+<div id='d7'>
+<form>
+<h4 style='margin-left:5px;'>DELETE DEPLOYMENT</h4>
+<input type='text' id='in9' name='fname' placeholder='Enter Deploy Name'>
+</form>
+</div>
+<div id='d8'>
+<form>
+<h4 style='margin-left:5px;'>LIST DEPLOYMENT</h4>
+</form>
+</div>
+</div>
+<div id='d9'>
+<form>
+<h4 style='margin-left:5px;'>LIST PODS</h4>
+</form>
+</div>
+</br>
+<button  onclick="cmd1();">Launch</button>
+<button  style='left:240px;' onclick="cmd2();">Launch</button>
+<button style='left:450px;' onclick="cmd3();">Scale</button>
+<button style='left:660px' onclick="cmd4();">Expose</button>
+<button style='left:890px' onclick="cmd5();">Delete</button>
+<button style='left:1120px' onclick="cmd6();">Delete</button>
+<button style="left:890px; bottom:20px;" onclick="cmd7();">List</button>
+<button style="left:1120px; bottom:20px;" onclick="cmd8();">List</button>
+<div id = "d1"></div>
+</pre>
+
+
+<!-----<img id='im2' src='+.png' width='20' height='20'>
+----></body>
